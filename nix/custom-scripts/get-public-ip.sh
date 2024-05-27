@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/run/current-system/sw/bin/bash
 
 # Fetch public IP address
 PUBLIC_IP=$(curl -s ifconfig.me)
