@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 # executables to run off start
 pgrep -x sxhkd > /dev/null || sxhkd &
