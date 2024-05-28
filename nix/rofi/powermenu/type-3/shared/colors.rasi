@@ -15,4 +15,4 @@
 
 /* Import color-scheme from `colors` directory */
 
-@import "~/.config/rofi/colors/crem-custom.rasi"
+@import "/home/crem/Documents/dots/nix/rofi/colors/crem-custom.rasi"
