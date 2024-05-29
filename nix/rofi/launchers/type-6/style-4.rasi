@@ -20,13 +20,13 @@ configuration {
 
 /*****----- Global Properties -----*****/
 * {
-    font:                        "FiraMono Nerd Font Mono 10";
-    background:                  #282A2E;
-    background-alt:              #373B41;
-    foreground:                  #FFFFFF;
-    selected:                    #F36955;
-    active:                      #7B6C5B;
-    urgent:                      #A54242;
+    font:                       "JetBrainsMono Nerd Font Mono 10";
+    background:     		#1E1D2FFF;
+    background-alt: 		#282839FF;
+    foreground:     		#D9E0EEFF;
+    selected:       		#B4BEFEFF;
+    active:         		#ABE9B3FF;
+    urgent:         		#F28FADFF;
 }
 
 /*****----- Main Window -----*****/
@@ -59,7 +59,7 @@ mainbox {
 imagebox {
     padding:                     20px;
     background-color:            transparent;
-    background-image:            url("~/.config/rofi/images/yamato-crop.png", width);
+    background-image:            url("/home/crem/Documents/dots/nix/images/mandelbrot_gap_lavender.png", height);
     orientation:                 vertical;
     children:                    [ "inputbar", "dummy", "mode-switcher" ];
 }
