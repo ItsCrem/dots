@@ -4,7 +4,8 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 #/usr/lib/xfce-polkit/xfce-polkit &
 /home/crem/Documents/dots/nix/custom-scripts/polybar.launch.sh
-
+# make the default cursor the left cursor
+xsetroot -cursor_name left_ptr &
 # fix burp window issue
 wmname LG3D
 
