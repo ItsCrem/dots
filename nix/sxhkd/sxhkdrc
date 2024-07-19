@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	alacritty --config-file /home/crem/.config/alacritty/alacritty.yml
+	alacritty --config-file /home/crem/.config/alacritty/alacritty.toml
 
 # program launcher
 super + space
