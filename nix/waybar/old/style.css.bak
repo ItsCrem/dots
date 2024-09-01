@@ -1,0 +1,193 @@
+@import "catppuccin.css";
+
+* {
+  border: none;
+  border-radius: 0px;
+  font-family: "JetBrainsMono Nerd Font Mono";
+}
+
+window#waybar {
+  background: @base;
+
+}
+
+#custom-updates,
+#custom-sync,
+#network,
+#bluetooth,
+#backlight,
+#pulseaudio,
+#memory {
+  background: transparent;
+  color: @lavender;
+  margin: 6px;
+  margin-bottom: 7px;
+}
+
+#workspaces {
+  background: @crust;
+  margin: 5px 5px 5px 5px;
+  padding: 4px 1px;
+  border-radius: 12px;
+  font-weight: normal;
+  font-style: normal;
+  opacity: 0.8;
+}
+
+#workspaces button {
+  padding: 0px 10px;
+  margin: 0px 3px;
+  border-radius: 12px;
+  background-color: @surface0;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.4;
+  font-size: 10px;
+}
+
+#workspaces button:hover {
+  background: @overlay0;
+  border-radius: 10px;
+  min-width: 30px;
+  background-size: 400% 400%;
+}
+
+#workspaces button.active {
+  color: @lavender;
+  background-color: @lavender;
+  border-radius: 10px;
+  min-width: 30px;
+  background-size: 400% 400%;
+  transition: all 0.3s ease-in-out;
+  opacity: 1.0;
+}
+
+#workspaces button.urgent {
+  background: @red;
+  color: black;
+  margin: 6px 0px 6px 0px;
+  padding: 3px 3px 3px 3px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+#clock {
+  background: transparent;
+  color: #FFFFFF;
+  padding: 3px 3px 3px 3px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+#clock:hover {
+  background: @overlay0;
+  margin: 6px;
+  margin-left: 9px;
+  margin-right: 0px;
+  padding: 3px 8px 3px 8px;
+}
+
+#battery {
+  background: transparent;
+  color: @accent;
+  margin: 6px;
+  margin-bottom: 7px;
+  transition: 0.3s;
+}
+
+#battery.charging {
+  background: linear-gradient(to right, @gradient1, @gradient2);
+  color: @background;
+  margin: 6px 0px 6px 0px;
+  padding: 3px 7px 3px 7px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+#disk {
+  background: transparent;
+  color: @accent;
+  margin-top: 6px;
+  margin-bottom: 7px;
+  margin-left: 10px;
+}
+
+#cpu {
+  background: transparent;
+  color: @accent;
+  margin-top: 6px;
+  margin-bottom: 7px;
+}
+
+#temperature.cpu {
+  background: transparent;
+  color: @accent;
+  margin-top: 6px;
+  margin-bottom: 7px;
+  margin-left: 1px;
+}
+
+#temperature.cpu.critical {
+  background: @critical;
+  color: @background;
+  border-radius: 8px;
+  margin-top: 6px;
+  margin-bottom: 7px;
+  margin-left: 1px;
+  padding: 3px 5px 3px 5px;
+}
+
+#tray {
+  background: @background_light;
+  margin: 6px 0px 6px 0px;
+  padding: 3px 7px 3px 7px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+#tray:hover {
+  background: @background_lighter;
+  margin: 6px 0px 6px 0px;
+  padding: 3px 7px 3px 7px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+#tray menu {
+  color: @accent;
+  background: @background;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+#window {
+  background-color: @background_light;
+  margin: 6px 0px 6px 0px;
+  padding: 3px 7px 3px 7px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+/* make window module transparent when no windows present */
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+/*
+#temperature.disk {
+    background: @background;
+    color: @accent;
+    margin-top: 6px;
+    margin-bottom: 7px;
+    margin-left: 1px;
+}
+
+#temperature.disk.critical{
+    background: @critical;
+    color: @background;
+    border-radius: 8px;
+    margin-top: 6px;
+    margin-bottom: 7px;
+    margin-left: 1px;
+    padding: 3 5 3 5px;
+}
+*/

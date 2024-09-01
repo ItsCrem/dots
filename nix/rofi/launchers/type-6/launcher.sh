@@ -12,6 +12,7 @@
 
 dir="$HOME/Documents/dots/nix/rofi/launchers/type-6"
 theme='style-4'
+#theme='style-1'
 
 ## Run
 rofi \

@@ -27,6 +27,8 @@ configuration {
     selected:       		#B4BEFEFF;
     active:         		#ABE9B3FF;
     urgent:         		#F28FADFF;
+    selected-alt:           #6C7086FC;
+    
 }
 
 /*****----- Main Window -----*****/
@@ -42,9 +44,11 @@ window {
 
     /* properties for all widgets */
     enabled:                     true;
-    border-radius:               0px;
+    border-radius:               15px;
     cursor:                      "default";
     background-color:            @background;
+    border:                      2px;
+    border-color:                @selected;
 }
 
 /*****----- Main Box -----*****/
@@ -117,7 +121,7 @@ button {
     cursor:                      pointer;
 }
 button selected {
-    background-color:            @selected;
+    background-color:            @selected-alt;
     text-color:                  @foreground;
 }
 
@@ -163,7 +167,7 @@ element normal.active {
     text-color:                  @foreground;
 }
 element selected.normal {
-    background-color:            @selected;
+    background-color:            @selected-alt;
     text-color:                  @foreground;
 }
 element selected.urgent {

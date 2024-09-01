@@ -1,0 +1,164 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    // "width": 1280, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["clock", "privacy", "group/hardware", "backlight", "pulseaudio", "battery"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["network", "bluetooth", "custom/power"],
+    "hyprland/workspaces": {
+    	"format": "",
+		"on-click": "activate",
+		"active-only": "false",
+		"all-outputs": true,
+		"format_icons": {
+			"urgent": "",
+			"active": "",
+			"default": "",
+		}
+     },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    //"custom/music": {
+    //    "format": "  {}",
+    //    "escape": true,
+    //    "interval": 5,
+    //    "tooltip": false,
+    //    "exec": "playerctl metadata --format='{{ title }}'",
+    //    "on-click": "playerctl play-pause",
+    //    "max-length": 50
+    //},
+    "clock": {
+        "timezone": "Australia/Sydney",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": " {:%d/%m/%Y}",
+        "format": " {:%H:%M %d/%m/%Y}"
+        
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+	    "bat": "BAT1",
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}",
+        "format-charging": " {capacity}",
+        "format-plugged": "{icon} {capacity}",
+        "format-alt": "{icon}",
+        "format-icons": ["", "", "", "", ""],
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", " "]
+        },
+        "on-click": "pavucontrol"
+    },
+    //"custom/lock": {
+    //    "tooltip": false,
+    //    "on-click": "sh -c '(sleep 0.5s; swaylock --grace 0)' & disown",
+    //    "format": "",
+    //},
+    "custom/power": {
+        "tooltip": false,
+        "on-click": "wlogout &",
+        "format": ""
+    },
+    "network": {
+        "interface": "wlp1s0",
+        "format": "{ifname}",
+        "format-wifi": " {ipaddr}",
+        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+        "format-disconnected": "error", //An empty format will hide the module.
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50
+    },
+    "bluetooth": {
+	    // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system.0 629108 16508 ?        Ssl  J
+	    "format": "󰂯 {status}",
+	    "format-disabled": "", // an empty format will hide the module
+	    "on-click": "blueman-manager",
+	    "max-length": 15,
+	    "format-connected": "{device_battery_percentage} 󰂱 <span foreground=\"#ffffff\">{device_alias}</span>",
+	    "tooltip-format": "{controller_alias}\t{controller_address}",
+	    "tooltip-format-connected": "{controller_alias}:  {controller_address}\n{device_enumerate}",
+	    "tooltip-format-enumerate-connected": "{device_alias}:  {device_address}"
+    },
+    "privacy": {
+    	"icon-spacing": 4,
+    	"icon-size": 18,
+    	"transition-duration": 250,
+    	"modules": [
+    		{
+    			"type": "screenshare",
+    			"tooltip": true,
+    			"tooltip-icon-size": 8
+    		},
+    		{
+    			"type": "audio-out",
+    			"tooltip": true,
+    			"tooltip-icon-size": 8
+    		},
+    		{
+    			"type": "audio-in",
+    			"tooltip": true,
+    			"tooltip-icon-size": 8
+    		}
+    	]
+    },
+    "group/hardware": {
+		"orientation": "inherit",
+		"drawer": {
+			"transition-duration": 500,
+			"transition-right-to-left": true,	
+		},	
+		"modules": [
+			"custom/draw-label",
+			"cpu",
+			"memory",
+			"disk",
+		]
+	},
+	"custom/draw-label": {
+		"format": ""	
+	},
+	
+    "memory": {
+	    "interval": 3,
+	    "format": " {}%",
+	    "tooltip": true,
+	    "tooltip-format": "{used:0.1f}GiB used\n{avail:0.1f}GiB available",
+	    "max-length": 10
+  	},
+	"cpu": {
+	    "interval": 2,
+	    "format": " {}%",
+	    "max-length": 10,
+	    "tooltip": true
+  	},
+  	"temperature#cpu": {
+    	"hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
+    	"critical-threshold": 90,
+    	"format-critical": " {temperatureC}°C",
+    	"format": " {temperatureC}°C"
+  },
+  "disk": {
+	    "interval": 30,
+	    "format": "󰋊 {percentage_used}%",
+	    "tooltip": true,
+	    "tooltip-format": "Free: {free} ({percentage_free}%)\nTotal: {total}",
+	    "path": "/"
+  }
+}
