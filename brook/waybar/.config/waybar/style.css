@@ -1,0 +1,151 @@
+@import "catppuccin.css";
+
+* {
+  font-family: "JetBrainsMono Nerd Font Mono", "Font Awesome 6 Free Regular";
+  font-size: 13px;
+  min-height: 0;
+}
+
+#waybar {
+  background: transparent;
+  margin: 5px 5px 50px 5px;
+}
+
+#workspaces {
+  background-color: @surface0;
+  margin: 5px 5px 5px 5px;
+  padding: 4px 1px;
+  border-radius: 1rem;
+  border: 1px solid @lavender;
+  font-weight: normal;
+  font-style: normal;
+  opacity: 0.8;
+  font-size: 5px;
+}
+
+#workspaces button {
+  padding: 0px 5px;
+  margin: 0px 3px;
+  border-radius: 1rem;
+  background-color: @overlay0;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.4;
+}
+
+#workspaces button:hover {
+  background: @overlay0;
+  border-radius: 1rem;
+  min-width: 50px;
+  background-size: 400% 400%;
+}
+
+#workspaces button.active {
+  color: @lavender;
+  background-color: @lavender;
+  border-radius: 1rem;
+  min-width: 50px;
+  background-size: 400% 400%;
+  transition: all 0.3s ease-in-out;
+  opacity: 1.0;
+}
+
+
+#custom-music,
+#tray,
+#backlight,
+#clock,
+#battery,
+#pulseaudio,
+#bluetooth,
+#cpu,
+#memory,
+#disk,
+#privacy,
+#custom-lock,
+#network,
+#custom-draw-label,
+#custom-power {
+  background-color: @surface0;
+  padding: 0.5rem 1rem;
+  margin: 5px 0;
+  border-top: 1px solid @lavender;
+  border-bottom: 1px solid @lavender;
+}
+
+#clock {
+  color: @blue;
+  border-radius: 1rem 0px 0px 1rem;
+  border-left: 1px solid @lavender;
+  margin-left: 1rem;
+}
+
+#battery {
+  color: @green;
+  border-radius: 0px 1rem 1rem 0px;
+  border-right: 1px solid @lavender;
+  margin-right: 1rem;
+}
+
+#battery.charging {
+  color: @green;
+  border-radius: 0px 1rem 1rem 0px;
+  border-right: 1px solid @lavender;
+}
+
+#battery.warning:not(.charging) {
+  color: @red;
+  border-radius: 0px 1rem 1rem 0px;
+  border-right: 1px solid @lavender;
+}
+
+#backlight {
+  color: @yellow;
+}
+
+#custom-draw-label,
+#cpu,
+#disk,
+#memory {
+  color: @pink;
+}
+
+#network {
+  color: @mauve;
+  border-radius: 1rem 0px 0px 1rem;
+  border-left: 1px solid @lavender;
+}
+
+#backlight,
+#pulseaudio {
+  border-radius: 0px;
+}
+
+#pulseaudio {
+  color: @peach;
+}
+
+#bluetooth {
+  color: @teal;
+}
+
+#custom-music {
+  color: @mauve;
+  border-radius: 1rem;
+}
+
+#custom-lock {
+  border-radius: 1rem 0px 0px 1rem;
+  color: @lavender;
+}
+
+#custom-power {
+  margin-right: 1rem;
+  border-radius: 0px 1rem 1rem 0px;
+  border-right: 1px solid @lavender;
+  color: #FFFFFF;
+}
+
+#tray {
+  margin-right: 1rem;
+  border-radius: 1rem;
+}
