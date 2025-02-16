@@ -3,6 +3,10 @@ name = "nix"
 formatter = { command = "nixpkgs-fmt" }
 
 [[language]]
+name = "markdown"
+language-servers = [ "marksman" ]
+
+[[language]]
 name = "python"
 language-servers = [ "pyright", "ruff" ]
 
@@ -18,3 +22,17 @@ args = ["--ignore", "E501"]
 [language.formatter]
 command = "black"
 args = ["--line-length", "88", "--quiet", "-"]
+
+[language-server.tinymist]
+command = "tinymist"
+config = { exportPdf = "onType", outputPath = "$root/$name" }
+
+[[language]]
+name = "typst"
+language-servers = ["tinymist"]
+
+
+
+
+
+
